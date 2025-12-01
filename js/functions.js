@@ -20,3 +20,9 @@ function parseNumber(input) {
 
   return parseInt(onlyDigits, 10);
 }
+
+export {
+  checkStrLength,
+  isPalindrome,
+  parseNumber,
+};
