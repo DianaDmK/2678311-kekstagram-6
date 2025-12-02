@@ -10,23 +10,21 @@ const getMessage = function (count) {
   return message.trim();
 };
 
+let commentIdCounter = 1;
 
-const getComment = function (id) {
-  return {
-    id: id,
-    avatar: `img/avatar-${getRandomInteger(1, 7)}.svg`,
-    message: getMessage(getRandomInteger(1, 3)),
-    name: consts.NAMES[getRandomInteger(1, consts.NAMES.length)],
-  };
-};
+const getComments = () => {
+  const commentCount = getRandomInteger(0, consts.MAX_COMMENTS_COUNT);
+  const commentArray = [];
 
-const getComments = function (itemId, count) {
-  const comments = [];
-  for (let i = 1; i <= count; i++) {
-    const id = (itemId - 1) * consts.MAX_COMMENTS_COUNT + i;
-    comments.push(getComment(id));
+  for (let i = 0; i < commentCount; i++) {
+    commentArray.push({
+      id: commentIdCounter++,
+      avatar: `img/avatar-${getRandomInteger(1, 7)}.svg`,
+      message: getMessage(getRandomInteger(1, 3)),
+      name: consts.NAMES[getRandomInteger(1, consts.NAMES.length)],
+    });
   }
-  return comments;
+  return commentArray;
 };
 
 const getItem = function (id) {
