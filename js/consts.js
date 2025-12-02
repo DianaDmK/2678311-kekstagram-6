@@ -43,7 +43,7 @@ const MAX_MESSAGE_COUNT = 3;
 
 const MIN_LIKE_COUNT = 15;
 
-const MAX_LIKE_COUNT = 201;
+const MAX_LIKE_COUNT = 200;
 
 export {
   NAMES,
