@@ -30,16 +30,15 @@ parseNumber('kfkgdkf');
 
 //module5-task2
 
-function getMinutesFromDayStart(time) {
+function getMinutes(time) {
   const arrayTime = time.toString().split(':').map(Number);
-  const minutes = arrayTime[0] * 60 + arrayTime[1];
 
-  return minutes;
+  return arrayTime[0] * 60 + arrayTime[1];
 }
 
 const checkMeetIsPunctual = function (startWork, endWork, startMeeting, lengthMeeting) {
-  const [startWorkMinutes, endWorkMinutes, startMeetingMinutes] = [startWork, endWork, startMeeting].map(getMinutesFromDayStart);
-  return !(lengthMeeting + startMeetingMinutes > endWorkMinutes || startMeetingMinutes < startWorkMinutes);
+  const [startWorkMinutes, endWorkMinutes, startMeetingMinutes] = [startWork, endWork, startMeeting].map(getMinutes);
+  return lengthMeeting + startMeetingMinutes <= endWorkMinutes && startMeetingMinutes >= startWorkMinutes;
 };
 
 checkMeetIsPunctual('08:00', '17:30', '14:00', 90); // true
