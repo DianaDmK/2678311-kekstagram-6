@@ -20,3 +20,7 @@ const createPicture = ({ url, description, likes, comments }) => {
 pictures.forEach(createPicture);
 
 pictureListElement.appendChild(pictureListFragment);
+
+export {
+  pictures,
+};
