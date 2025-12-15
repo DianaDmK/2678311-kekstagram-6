@@ -48,7 +48,6 @@ function closeByButton() {
 function onSubmit(evt) {
   evt.preventDefault();
   const isValid = pristine.validate();
-  console.log(isValid);
   if (!isValid) {
     return false;
   }
