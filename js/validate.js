@@ -12,7 +12,7 @@ const pristine = new Pristine(uploadForm, {
   errorTextParent: 'img-upload__field-wrapper',
   errorTextTag: 'span',
   errorTextClass: 'form__error'
-}, false);
+});
 
 function getTagsFromString(value) {
   return value.toLowerCase().trim().split(/\s+/).map((tag) => tag.trim());
@@ -60,9 +60,9 @@ function validateHashtags(value) {
   return true;
 }
 
-pristine.addValidator(hashtagInput, validateHashtags, 'Хэштеги невалидны!');
-pristine.addValidator(hashtagInput, validateHashtagCount, 'Хэштегов не может быть больше 5!');
-pristine.addValidator(hashtagInput, validateHashtagsUnique, 'Хэштеги должны быть уникальны!');
+pristine.addValidator(hashtagInput, validateHashtags, 'Хэштеги невалидны!', 3);
+pristine.addValidator(hashtagInput, validateHashtagCount, 'Хэштегов не может быть больше 5!', 2);
+pristine.addValidator(hashtagInput, validateHashtagsUnique, 'Хэштеги должны быть уникальны!', 1);
 
 const validateDescription = (value) => value.length <= MAX_LENGTH_DESCRIPTION;
 
