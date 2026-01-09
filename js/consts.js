@@ -55,6 +55,8 @@ const COUNT_RANDOM_PICTURES = 10;
 
 const TIMEOUT_DELAY = 500;
 
+const FILE_TYPES = ['image/jpeg', 'image/png', 'image/jpg'];
+
 export {
   NAMES,
   MESSAGES,
@@ -70,6 +72,7 @@ export {
   MAX_COMMENTS_UPLOAD,
   ALERT_SHOW_TIME,
   COUNT_RANDOM_PICTURES,
-  TIMEOUT_DELAY
+  TIMEOUT_DELAY,
+  FILE_TYPES
 };
 
